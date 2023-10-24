@@ -140,7 +140,7 @@ add_action( 'widgets_init', 'arshida_widgets_init' );
 function arshida_scripts() {
 	wp_enqueue_style( 'arshida-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'arshida-style', 'rtl', 'replace' );
-
+	wp_enqueue_style( 'additional-style', get_template_directory_uri().'/additional.css', array(), _S_VERSION );
 	wp_enqueue_script( 'arshida-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

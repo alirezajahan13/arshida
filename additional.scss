@@ -1,0 +1,34 @@
+.mainFooterBack{
+    background-color: #e6e1e0;
+    .mainFooter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .footerColumn1{
+            width: 36%;
+            p{
+                text-align: justify;
+            }
+        }
+        .footerColumn2{
+            width: 20%;
+        }
+        .footerColumn3{
+            width: 30%;
+        }
+    }
+}
+.footerCopyRightBack{
+    .footerCopyRight{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .footerCopyRightIcons{
+            display: flex;
+            align-items: center;
+            a{
+                margin: 0px 7px;
+            }
+        }
+    }
+}
