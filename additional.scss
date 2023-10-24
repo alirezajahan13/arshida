@@ -1,9 +1,17 @@
+@import 'sass/breakpoints';
+@import 'sass/variables';
+@import 'sass/source';
+
 .mainFooterBack{
     background-color: #e6e1e0;
     .mainFooter{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        h2{
+            margin: 0px 0px 20px 0px;
+            color: $textColorLighter;
+        }
         .footerColumn1{
             width: 36%;
             p{
@@ -11,23 +19,83 @@
             }
         }
         .footerColumn2{
-            width: 20%;
+            width: 12%;
         }
         .footerColumn3{
             width: 30%;
+            li{
+                a{
+                    display: flex;
+                    svg{
+                        margin-left: 3px;
+                    }
+                }
+            }
         }
     }
 }
 .footerCopyRightBack{
+    background-color: $backColorLighter;
+    padding: 15px 0px;
     .footerCopyRight{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        p{
+            margin: 0;
+        }
         .footerCopyRightIcons{
             display: flex;
             align-items: center;
             a{
                 margin: 0px 7px;
+            }
+        }
+    }
+}
+.page-template-aboutUs-template{
+    background-color: $backColorLighter;
+}
+.aboutPageSectionOneBack{
+    .aboutPageSectionOne{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .sectionOneRight{
+            width: 40%;
+            h2{
+                color: $textColorLighter;
+            }
+        }
+        .sectionOneLeft{
+            width: 50%;
+        }
+    }
+}
+.aboutPageSectionTwoBack{
+    background-image: url('img/back-about.png');
+    background-size: cover;
+    background-position: center;
+    padding: 150px;
+    .aboutPageSectionTwo{
+        width: 40%;
+        text-align: center;
+    }
+}
+.aboutPageSectionThreeBack{
+    .aboutPageSectionThree{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .sectionOneRight{
+            width: 50%;
+        }
+        .sectionOneLeft{
+            width: 40%;
+            h2{
+                color: $textColorLighter;
             }
         }
     }
