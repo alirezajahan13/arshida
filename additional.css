@@ -1,0 +1,33 @@
+.mainFooterBack {
+  background-color: #e6e1e0;
+}
+.mainFooterBack .mainFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainFooterBack .mainFooter .footerColumn1 {
+  width: 36%;
+}
+.mainFooterBack .mainFooter .footerColumn1 p {
+  text-align: justify;
+}
+.mainFooterBack .mainFooter .footerColumn2 {
+  width: 20%;
+}
+.mainFooterBack .mainFooter .footerColumn3 {
+  width: 30%;
+}
+
+.footerCopyRightBack .footerCopyRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerCopyRightBack .footerCopyRight .footerCopyRightIcons {
+  display: flex;
+  align-items: center;
+}
+.footerCopyRightBack .footerCopyRight .footerCopyRightIcons a {
+  margin: 0px 7px;
+}/*# sourceMappingURL=additional.css.map */
