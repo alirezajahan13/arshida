@@ -28,3 +28,187 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .sourceOfHeading{
     border-top: 2px solid #000;
 }
+.single-product{
+    padding-top: 50px;
+}
+
+
+.mainSingleProductHeader{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    .woocommerce-product-gallery{
+        width: 30% !important;
+        .flex-viewport{
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .flex-control-thumbs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li{
+                overflow: hidden;
+                border-radius: 7px;
+                padding: 0;
+                width: 30% !important;
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+    .entry-summary{
+        width: 40% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+        .product_title{
+            font-size: 20px;
+            line-height: 35px;
+        }
+        .woocommerce-product-rating{
+            margin-bottom: 15px !important;
+            .woocommerce-review-link{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                span{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    height: 25px;
+                    font-size: 13px;
+                }
+                .count{
+                    position: relative;
+                    padding-right: 10px;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        background-color: #707070;
+                        width: 15px;
+                        height: 1.5px;
+                        top: 0;
+                        bottom: 0;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        transform: rotate(90deg);
+                        right: 0;
+                    }
+                }
+            }
+    
+        }
+        .woocommerce-product-details__short-description{
+            ul{
+                padding: 0;
+            }
+        }
+        form.cart{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .product_meta{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            span{
+                font-weight: 600;
+                a{
+                    font-weight: 400;
+                }
+            }
+            .posted_in{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .upsellsWraper{
+        width: 25%;
+        .up-sells {
+            >h2{
+                margin: 0;
+                margin-bottom: 30px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+    }
+}
+.upsellsWraper{
+    ul{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        li{
+            width: 100% !important;
+            margin: 0 !important;
+            margin-bottom: 20px !important;
+            &::before{
+                display: none;
+            }
+            a.woocommerce-LoopProduct-link{
+                width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: space-between;
+                position: relative;
+                border: 1px solid lighten($textColorLight, 20%);
+                padding: 10px;
+                border-radius: 10px;
+                align-items: center;
+                img{
+                    width: 25% !important;
+                    margin: 0 !important;
+                    border-radius: 100% !important;
+                }
+                .woocommerce-loop-product__title{
+                    width: 70% !important;
+                    font-size: 13px !important;
+                    font-weight: 500 !important;
+                    padding: 0 !important;
+                    margin-bottom: 20px !important;
+                }
+                .price{
+                    position: absolute;
+                    bottom: 15px;
+                    right: 33%;
+                    width: max-content;
+                    margin: 0;
+                    .woocommerce-Price-amount{
+                        bdi{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .add_to_cart_button{
+                display: none !important;
+            }
+        }
+    }
+}
+
+.price{
+    .woocommerce-Price-amount{
+        bdi{
+            color: #81a8af;
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
+}
+.single_add_to_cart_button{
+    background-color: #324b4f !important;
+    font-size: 14px !important;
+    padding: 15px 20px !important;
+    border-radius: 7px !important;
+    font-weight: 400 !important;
+}

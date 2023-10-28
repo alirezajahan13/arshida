@@ -57,6 +57,7 @@ body {
   color: #3f3f3f;
   padding: 0;
   font-size: 14.5px;
+  background-color: #fcf9f8;
 }
 
 * {
@@ -155,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .lighterText {
-  color: #81a8af;
+  color: #bee7ee;
 }
 
 p {
@@ -606,7 +607,7 @@ select option {
 }
 .mainFooterBack .mainFooter h2 {
   margin: 0px 0px 20px 0px;
-  color: #81a8af;
+  color: #bee7ee;
 }
 @media screen and (max-width: 480px) {
   .mainFooterBack .mainFooter .footerColumns {
@@ -699,7 +700,7 @@ select option {
   }
 }
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneRight h2 {
-  color: #81a8af;
+  color: #bee7ee;
 }
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneLeft {
   width: 50%;

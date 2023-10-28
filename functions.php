@@ -176,3 +176,115 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce', array(
+        'thumbnail_image_width' => 300,
+        'single_image_width'    => 600,
+
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 8,
+            'default_columns' => 4,
+            'min_columns'     => 2,
+            'max_columns'     => 5,
+        ),
+    ) );
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+// add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
+
+
+/**
+ * Remove WooCommerce breadcrumbs 
+ */
+add_action( 'init', 'my_remove_breadcrumbs' );
+ 
+function my_remove_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
+
+/**
+ * Remove related products output
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+add_action( 'wp', 'mageplaza_remove_sidebar_product_pages' );
+function mageplaza_remove_sidebar_product_pages() {
+  if ( is_product() ) {
+  remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+  }
+}
+
+
+// 1. Remove Upsells From Their Default Position
+// NOTE: please make sure your theme is not already overriding this...
+// ...for example, see specific Storefront Theme snippet below
+ 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+ 
+// Change "You may also like..." text in WooCommerce
+
+add_filter( 'woocommerce_product_upsells_products_heading', 'bbloomer_translate_may_also_like' );
+  
+function bbloomer_translate_may_also_like() {
+   return 'در کنارش خریداری شده ...';
+}
+
+
+// 1. Show plus minus buttons
+  
+add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );
+  
+function bbloomer_display_quantity_plus() {
+   echo '<button type="button" class="plus" >+</button>';
+}
+  
+add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_minus' );
+  
+function bbloomer_display_quantity_minus() {
+   echo '<button type="button" class="minus" >-</button>';
+}
+  
+// -------------
+// 2. Trigger update quantity script
+  
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
+  
+function bbloomer_add_cart_quantity_plus_minus() {
+ 
+   if ( ! is_product() && ! is_cart() ) return;
+    
+   wc_enqueue_js( "   
+           
+      $('form.cart,form.woocommerce-cart-form').on( 'click', 'button.plus, button.minus', function() {
+  
+         var qty = $( this ).parent( '.quantity' ).find( '.qty' );
+         var val = parseFloat(qty.val());
+         var max = parseFloat(qty.attr( 'max' ));
+         var min = parseFloat(qty.attr( 'min' ));
+         var step = parseFloat(qty.attr( 'step' ));
+ 
+         if ( $( this ).is( '.plus' ) ) {
+            if ( max && ( max <= val ) ) {
+               qty.val( max );
+            } else {
+               qty.val( val + step );
+            }
+         } else {
+            if ( min && ( min >= val ) ) {
+               qty.val( min );
+            } else if ( val > 1 ) {
+               qty.val( val - step );
+            }
+         }
+ 
+      });
+        
+   " );
+}
