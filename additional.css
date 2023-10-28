@@ -343,8 +343,8 @@ input {
 }
 input[type=text], input[type=password], input[type=email], input[type=tel], input[type=url] {
   border: none;
-  background-color: #f5f1ef;
-  border-radius: 45px;
+  background-color: #fff;
+  border-radius: 10px;
   color: #3f3f3f;
   font-size: 14px;
   margin-right: -15px;
@@ -378,11 +378,11 @@ input[type=submit] {
   padding: 15px 25px;
   cursor: pointer;
   transition: all 0.3s;
-  border-radius: 45px;
+  border-radius: 10px;
   font-size: 14px;
 }
 input[type=submit]:hover {
-  background-color: #2354bc;
+  background-color: #243639;
 }
 input:focus {
   outline: none;
@@ -395,8 +395,8 @@ textarea {
   height: 150px;
   padding: 10px 20px;
   resize: none;
-  border-radius: 15px;
-  background-color: #f5f1ef;
+  border-radius: 10px;
+  background-color: #fff;
   border: none;
   color: #3f3f3f;
   font-size: 14px;
@@ -608,8 +608,19 @@ select option {
   margin: 0px 0px 20px 0px;
   color: #81a8af;
 }
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .footerColumns {
+    width: 100% !important;
+    margin-top: 20px;
+  }
+}
 .mainFooterBack .mainFooter .footerColumn1 {
   width: 36%;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .footerColumn1 {
+    order: 3;
+  }
 }
 .mainFooterBack .mainFooter .footerColumn1 p {
   text-align: justify;
@@ -617,8 +628,18 @@ select option {
 .mainFooterBack .mainFooter .footerColumn2 {
   width: 12%;
 }
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .footerColumn2 {
+    order: 2;
+  }
+}
 .mainFooterBack .mainFooter .footerColumn3 {
   width: 30%;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .footerColumn3 {
+    order: 1;
+  }
 }
 .mainFooterBack .mainFooter .footerColumn3 li a {
   display: flex;
@@ -636,8 +657,19 @@ select option {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  .footerCopyRightBack .footerCopyRight {
+    flex-direction: column;
+  }
+}
 .footerCopyRightBack .footerCopyRight p {
   margin: 0;
+}
+@media screen and (max-width: 480px) {
+  .footerCopyRightBack .footerCopyRight p {
+    order: 2;
+    font-size: 10px;
+  }
 }
 .footerCopyRightBack .footerCopyRight .footerCopyRightIcons {
   display: flex;
@@ -660,11 +692,23 @@ select option {
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneRight {
   width: 40%;
 }
+@media screen and (max-width: 480px) {
+  .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneRight {
+    width: 100%;
+    order: 2;
+  }
+}
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneRight h2 {
   color: #81a8af;
 }
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneLeft {
   width: 50%;
+}
+@media screen and (max-width: 480px) {
+  .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneLeft {
+    width: 100%;
+    order: 1;
+  }
 }
 
 .aboutPageSectionTwoBack {
@@ -673,9 +717,35 @@ select option {
   background-position: center;
   padding: 150px;
 }
+@media screen and (max-width: 480px) {
+  .aboutPageSectionTwoBack {
+    padding: 0;
+  }
+}
 .aboutPageSectionTwoBack .aboutPageSectionTwo {
   width: 40%;
   text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .aboutPageSectionTwoBack .aboutPageSectionTwo {
+    padding: 10px 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .aboutPageSectionTwoBack .aboutPageSectionTwo h2, .aboutPageSectionTwoBack .aboutPageSectionTwo p {
+    line-height: 22px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .aboutPageSectionTwoBack .aboutPageSectionTwo p {
+    font-size: 13.5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .aboutPageSectionTwoBack .aboutPageSectionTwo h2 {
+    font-size: 20px;
+  }
 }
 
 .aboutPageSectionThreeBack .aboutPageSectionThree {
@@ -687,9 +757,166 @@ select option {
 .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneRight {
   width: 50%;
 }
+@media screen and (max-width: 480px) {
+  .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneRight {
+    width: 100%;
+    order: 2;
+  }
+}
 .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneLeft {
   width: 40%;
 }
+@media screen and (max-width: 480px) {
+  .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneLeft {
+    width: 100%;
+    order: 1;
+  }
+}
 .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneLeft h2 {
   color: #81a8af;
+}
+
+.contactUsPageBack {
+  background-color: #fcf9f8;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionOne {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionOne .communicationSec {
+    width: 100%;
+    order: 2;
+  }
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .communicationSec h5 {
+  margin-bottom: 5px;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .communicationSec .communications {
+  display: flex;
+  align-items: center;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .communicationSec .communications svg {
+  margin-left: 4px;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .communicationSec .daysContact {
+  margin-right: 10px;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec {
+  width: 46%;
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec {
+    width: 100%;
+    order: 1;
+  }
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm {
+  background-color: #f5f1ef;
+  padding: 40px 40px 0px 40px;
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm {
+    padding: 20px 20px 0px 5px;
+  }
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm .cFormPageSecOne {
+  display: flex;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm .cFormPageSecOne p {
+  display: flex;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm .cFormPageSecOne p input[type=email], .contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm .cFormPageSecOne p input[type=text] {
+  padding: 7px 14px !important;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm p {
+  line-height: 20px !important;
+  margin-bottom: 0 !important;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm input[type=submit] {
+  width: 30%;
+  padding: 7px 14px !important;
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm input[type=submit] {
+    width: 40%;
+  }
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionOne .formSec .contactPageForm textarea {
+  height: 130px !important;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionTwo {
+  display: flex;
+  justify-content: center;
+}
+.contactUsPageBack .contactUsPage .contactUsPageSectionTwo iframe {
+  height: 300px;
+  width: 85%;
+}
+@media screen and (max-width: 480px) {
+  .contactUsPageBack .contactUsPage .contactUsPageSectionTwo iframe {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.archiveParent {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 40px;
+  margin-bottom: 30px;
+}
+.archiveParent a {
+  transition: all 0.4s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+}
+.archiveParent a:hover {
+  background-color: #fdfcfc;
+}
+.archiveParent a:hover img {
+  transform: scale(1.1);
+}
+.archiveParent a .entry-header {
+  padding: 0 30px;
+  text-align: center;
+}
+.archiveParent a p {
+  padding: 0 30px;
+}
+.archiveParent a .archivePostFooter {
+  display: flex;
+  justify-content: space-between;
+}
+.archiveParent a .archivePostFooter span {
+  display: flex;
+  color: #81a8af;
+}
+.archiveParent a .archivePostFooter span svg {
+  margin-left: 4px;
+}
+.archiveParent a .archiveCardImg {
+  overflow: hidden;
+}
+.archiveParent a img {
+  transition: all 0.4s;
+}
+
+.categorySecParent {
+  display: flex;
+  justify-content: center;
+}
+.categorySecParent .categoryItem {
+  margin: 0 20px;
+  font-weight: 500;
 }/*# sourceMappingURL=additional.css.map */
