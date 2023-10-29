@@ -288,3 +288,16 @@ function bbloomer_add_cart_quantity_plus_minus() {
         
    " );
 }
+
+function bbloomer_shop_product_short_description() {
+	the_excerpt();
+}
+function my_excerpt_length($length){
+	return 25;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
+function new_excerpt_more( $more ) {
+	return ' ... ';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

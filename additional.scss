@@ -10,7 +10,7 @@
         justify-content: space-between;
         h2{
             margin: 0px 0px 20px 0px;
-            color: $textColorLighter;
+            color: $textColorLight;
         }
         .footerColumns{
             @include xs{
@@ -252,12 +252,19 @@
     grid-template-columns: repeat(3,minmax(0,1fr));
     grid-gap: 40px;
     margin-bottom: 30px;
+    @include xs{
+        grid-template-columns: repeat(1,minmax(0,1fr)) !important;
+    }
+    @include sm{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
     a{
         transition: all 0.4s;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+        background-color: #fff;
         &:hover{
             background-color: lighten($backColorLight,4%);
             img{
@@ -270,13 +277,16 @@
         }
         p{
             padding: 0 30px;
+            color: $textColorLight;
         }
         .archivePostFooter{
             display: flex;
             justify-content: space-between;
+            padding: 20px 30px;
             span{
                 display: flex;
-                color: $textColorLighter;
+                color: $textColorLight;
+                font-weight: 300;
                 svg{
                     margin-left: 4px;
                 }
@@ -292,9 +302,147 @@
 }
 .categorySecParent{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     .categoryItem{
-        margin: 0 20px;
+        margin: 0px 0px 15px 15px;
         font-weight: 500;
+        @include xs{
+            font-size: 13px;
+        }
+    }
+}
+.archiveCatTitle{
+    .page-title{
+        display: flex;
+        font-size: 22px;
+        flex-wrap: wrap;
+        align-items: center;
+        span{
+            font-size: 15px;
+            // font-weight: 300;
+            display: block;
+            margin: 0;
+            margin-right: 5px;
+        }
+    }
+}
+.singleBox{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 950px;
+}
+.post-thumbnail{
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+.entry-content{
+    h3 , h2 , h4{
+        color: $textColorLight;
+    }
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+}
+.comments-area{
+    .comments-title{
+    font-size: 17px;
+    }
+    .comment-list{
+        padding: 0 !important;
+        li{
+            padding: 20px !important;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            &::before{
+                content: none;
+            }
+            .comment-meta{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .comment-author{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                        margin: 0px 0px 5px 20px;
+                    }
+                    .says{
+                        display: none;
+                    }
+                }
+                .comment-metadata{
+                    time , span{
+                        color: $textColorLight;
+                    }
+                }
+            }
+            .comment-content{
+                width: 87%;
+                margin: 10px auto;
+            }
+            .reply{
+                display: flex;
+                flex-direction: row-reverse;
+                .comment-reply-link{
+                    padding: 7px 20px;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+    .comment-respond{
+        background-color: $backColorDark;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin: 30px 0 60px 0;
+        textarea , input{
+            margin-right: 0 !important;
+        }
+        .comment-form-url{
+            display: none;
+        }
+        .comment-form-author{
+            display: inline-block;
+            width: 48%;
+            margin-left: 30px;
+        }
+        .comment-form-email{
+            display: inline-block;
+            width: 48%;
+        }
+        .comment-form-cookies-consent{
+            display: flex;
+            align-items: center;
+            label{
+                padding-right: 5px !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        .form-submit{
+            width: 15%;
+            input{
+                &[type=submit]{
+                    padding: 7px 14px !important;
+                }
+            }
+        }
     }
 }
