@@ -36,9 +36,9 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="archiveCardExc lighterText"><?php the_excerpt(); ?></div>
+	<div class="archiveCardExc justified"><?php the_excerpt(); ?></div>
 
-	<div class="archivePostFooter highPadding">
+	<div class="archivePostFooter">
 
 		<span><svg width="18" height="18" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="#81a8af" fill="none"><circle cx="32" cy="32" r="25.3"/><path d="M32 11.88v20.89l11.22 8.61"/></svg><?php echo get_the_date() ?></span>
 

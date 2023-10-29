@@ -20,19 +20,19 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area mainView singleBox">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title highMargined centeredText">
 			<?php
 			$arshida_comment_count = get_comments_number();
 			if ( '1' === $arshida_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'arshida' ),
+					esc_html__( 'یک دیدگاه در &ldquo;%1$s&rdquo;', 'arshida' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ol class="comment-list highMargined">
 			<?php
 			wp_list_comments(
 				array(
