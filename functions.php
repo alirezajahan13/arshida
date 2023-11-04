@@ -301,3 +301,9 @@ function new_excerpt_more( $more ) {
 	return ' ... ';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+
+
+

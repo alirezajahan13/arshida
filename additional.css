@@ -1033,39 +1033,59 @@ select option {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
-.comments-area .comment-respond {
-  background-color: #e6e1e0;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 30px 0 60px 0;
+
+.comment-respond {
+  background-color: #e6e1e0 !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  margin: 30px 0 60px 0 !important;
 }
-.comments-area .comment-respond textarea, .comments-area .comment-respond input {
+.comment-respond textarea, .comment-respond input {
   margin-right: 0 !important;
 }
-.comments-area .comment-respond .comment-form-url {
-  display: none;
+.comment-respond .comment-form-url {
+  display: none !important;
 }
-.comments-area .comment-respond .comment-form-author {
-  display: inline-block;
-  width: 48%;
-  margin-left: 30px;
+.comment-respond .comment-form-author {
+  display: inline-block !important;
+  width: 48% !important;
+  margin-left: 30px !important;
 }
-.comments-area .comment-respond .comment-form-email {
-  display: inline-block;
-  width: 48%;
+@media screen and (max-width: 768px) {
+  .comment-respond .comment-form-author {
+    width: 100% !important;
+  }
 }
-.comments-area .comment-respond .comment-form-cookies-consent {
-  display: flex;
-  align-items: center;
+.comment-respond .comment-form-email {
+  display: inline-block !important;
+  width: 48% !important;
 }
-.comments-area .comment-respond .comment-form-cookies-consent label {
+@media screen and (max-width: 768px) {
+  .comment-respond .comment-form-email {
+    width: 100% !important;
+  }
+}
+.comment-respond .comment-form-cookies-consent {
+  display: flex !important;
+  align-items: center !important;
+}
+.comment-respond .comment-form-cookies-consent label {
   padding-right: 5px !important;
   margin-bottom: 0 !important;
 }
-.comments-area .comment-respond .form-submit {
-  width: 15%;
+.comment-respond .form-submit {
+  width: -moz-max-content !important;
+  width: max-content !important;
 }
-.comments-area .comment-respond .form-submit input[type=submit] {
-  padding: 7px 14px !important;
+.comment-respond .form-submit input[type=submit] {
+  padding: 10px 20px !important;
+  background-color: #324b4f !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
 }/*# sourceMappingURL=additional.css.map */
