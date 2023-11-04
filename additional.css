@@ -700,7 +700,7 @@ select option {
   }
 }
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneRight h2 {
-  color: #bee7ee;
+  color: #a1a1a1;
 }
 .aboutPageSectionOneBack .aboutPageSectionOne .sectionOneLeft {
   width: 50%;
@@ -774,7 +774,7 @@ select option {
   }
 }
 .aboutPageSectionThreeBack .aboutPageSectionThree .sectionOneLeft h2 {
-  color: #bee7ee;
+  color: #a1a1a1;
 }
 
 .contactUsPageBack {
@@ -975,6 +975,9 @@ select option {
 .entry-content h3, .entry-content h2, .entry-content h4 {
   color: #a1a1a1;
 }
+.entry-content p {
+  text-align: justify;
+}
 .entry-content img {
   display: block;
   width: 100%;
@@ -1004,6 +1007,13 @@ select option {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-list li .comment-meta {
+    align-items: normal;
+    flex-direction: column;
+    font-size: 12px;
+  }
+}
 .comments-area .comment-list li .comment-meta .comment-author {
   display: flex;
   align-items: center;
@@ -1013,6 +1023,12 @@ select option {
   height: 40px;
   border-radius: 100%;
   margin: 0px 0px 5px 20px;
+}
+@media screen and (max-width: 480px) {
+  .comments-area .comment-list li .comment-meta .comment-author img {
+    width: 30px;
+    height: 30px;
+  }
 }
 .comments-area .comment-list li .comment-meta .comment-author .says {
   display: none;
@@ -1024,6 +1040,11 @@ select option {
   width: 87%;
   margin: 10px auto;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-list li .comment-content p {
+    font-size: 13px;
+  }
+}
 .comments-area .comment-list li .reply {
   display: flex;
   flex-direction: row-reverse;
@@ -1032,6 +1053,12 @@ select option {
   padding: 7px 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+}
+@media screen and (max-width: 480px) {
+  .comments-area .comment-list li .reply .comment-reply-link {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
 }
 .comments-area .comment-respond {
   background-color: #e6e1e0;
@@ -1043,6 +1070,11 @@ select option {
 .comments-area .comment-respond textarea, .comments-area .comment-respond input {
   margin-right: 0 !important;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .comment-notes, .comments-area .comment-respond .logged-in-as {
+    font-size: 13px;
+  }
+}
 .comments-area .comment-respond .comment-form-url {
   display: none;
 }
@@ -1051,9 +1083,20 @@ select option {
   width: 48%;
   margin-left: 30px;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .comment-form-author {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
 .comments-area .comment-respond .comment-form-email {
   display: inline-block;
   width: 48%;
+}
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .comment-form-email {
+    width: 100%;
+  }
 }
 .comments-area .comment-respond .comment-form-cookies-consent {
   display: flex;
@@ -1063,9 +1106,168 @@ select option {
   padding-right: 5px !important;
   margin-bottom: 0 !important;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .comment-form-cookies-consent label {
+    font-size: 11px;
+    line-height: 20px;
+  }
+}
 .comments-area .comment-respond .form-submit {
   width: 15%;
 }
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .form-submit {
+    width: 35%;
+  }
+}
 .comments-area .comment-respond .form-submit input[type=submit] {
   padding: 7px 14px !important;
+}
+@media screen and (max-width: 480px) {
+  .comments-area .comment-respond .form-submit input[type=submit] {
+    font-size: 11.5px;
+  }
+}
+
+.single-post header {
+  margin-bottom: 0px;
+}
+.single-post .morePostBlog .archiveParent .entry-title {
+  font-size: 18px;
+}
+.single-post .morePostBlog .archiveParent .archiveCardExc {
+  font-size: 13px;
+}
+.single-post .morePostBlog .archiveParent .archivePostFooter {
+  font-size: 12.5px;
+}
+
+.generalSinglePostStyle .singlePostSubHeading {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #a1a1a1;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 480px) {
+  .generalSinglePostStyle .singlePostSubHeading {
+    font-size: 10.5px;
+  }
+}
+.generalSinglePostStyle .singlePostSubHeading .dateSinglePost {
+  margin-left: 30px;
+}
+
+.archive .categorySecParent .activeCategory {
+  font-weight: 800;
+  position: relative;
+}
+.archive .categorySecParent .activeCategory::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: #ffa96b;
+  bottom: 51px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media screen and (max-width: 480px) {
+  .archive .categorySecParent .activeCategory {
+    color: #ffa96b !important;
+  }
+  .archive .categorySecParent .activeCategory::before {
+    content: none;
+  }
+}
+
+.mainHeaderBack {
+  background-color: #fff;
+  padding: 10px 0px;
+}
+.mainHeaderBack .mainHeader {
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .logoSection {
+  margin-left: 35px;
+}
+@media screen and (max-width: 768px) {
+  .mainHeaderBack .mainHeader .menuSection {
+    display: none;
+  }
+}
+.mainHeaderBack .mainHeader .menuSection ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .menuSection ul li::before {
+  content: none;
+}
+.mainHeaderBack .mainHeader .menuSection ul li a {
+  padding: 5px 10px;
+}
+.mainHeaderBack .mainHeader a {
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .headerIcon {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .headerIcon a {
+  margin-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  .mainHeaderBack .mainHeader .headerIcon a {
+    display: none;
+  }
+}
+.mainHeaderBack .mainHeader .headerIcon .openMenuMob {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mainHeaderBack .mainHeader .headerIcon .openMenuMob {
+    display: flex !important;
+  }
+}
+
+.home .mainHeaderBack {
+  background-color: transparent;
+}
+
+.stickyHeaderParent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -100px;
+  transition: all 0.5s;
+  z-index: 999;
+}
+.stickyHeaderParent .mainHeaderBack {
+  background-color: #fff;
+  margin: 0;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+  padding: 5px 0;
+}
+
+.showStickyHeader {
+  top: 0;
+}
+
+.mobileMenuParent {
+  background-color: #fff;
+}
+.mobileMenuParent .moileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobileMenuParent .moileMenuHeader .iconsMobMenu #openMenuMob {
+  margin-right: 10px;
 }/*# sourceMappingURL=additional.css.map */
