@@ -20,31 +20,15 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area mainView singleBox">
-
+<div id="comments" class="comments-area mainView singleBox bottomBorder">
+	<div class="generalHeadig centeredText">
+		<h1>نظرات</h1>
+	</div>
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title highMargined centeredText">
-			<?php
-			$arshida_comment_count = get_comments_number();
-			if ( '1' === $arshida_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'یک دیدگاه در &ldquo;%1$s&rdquo;', 'arshida' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $arshida_comment_count, 'comments title', 'arshida' ) ),
-					number_format_i18n( $arshida_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+		
 
 		<?php the_comments_navigation(); ?>
 

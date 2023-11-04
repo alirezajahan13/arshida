@@ -12,7 +12,7 @@
 <div class="generalSinglePostStyle singleBox extraHighMargined bottomBorder">
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header highMargined highPadding centeredText">
+	<header class="entry-header highMargined centeredText">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -22,15 +22,18 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
-				<?php
-				arshida_posted_on();
-				arshida_posted_by();
-				?>
-			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
+	<div class="singlePostSubHeading">
+		<div class="dateSinglePost">
+			<span class="centerFooter">تاریخ انتشار : </span>
+			<span><?php echo get_the_date() ?></span>
+		</div>
+		<div class="authorSinglePost">
+			<span class="centerFooter">نویسنده :</span>
+			<span><?php echo get_the_author() ?></span>
+		</div>
+	</div>
 	<?php arshida_post_thumbnail(); ?>
 
 	<div class="entry-content">
