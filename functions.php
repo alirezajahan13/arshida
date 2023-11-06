@@ -140,8 +140,11 @@ add_action( 'widgets_init', 'arshida_widgets_init' );
 function arshida_scripts() {
 	wp_enqueue_style( 'arshida-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'arshida-style', 'rtl', 'replace' );
-	wp_enqueue_script('jquery');
 	wp_enqueue_style( 'additional-style', get_template_directory_uri().'/additional.css', array(), _S_VERSION );
+	wp_enqueue_style( 'swiper-bundle-style', get_template_directory_uri().'/swiper/swiper-bundle.min.css', array(), _S_VERSION );
+
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'swiper-bundle', get_template_directory_uri() . '/swiper/swiper-bundle.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'arshida-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'arshida-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'arshida-headercontrol', get_template_directory_uri() . '/js/headercontrol.js', array(), _S_VERSION, true );
@@ -310,3 +313,74 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 
 
+add_filter( 'woocommerce_sale_flash', 'add_percentage_to_sale_badge', 20, 3 );
+function add_percentage_to_sale_badge( $html, $post, $product ) {
+
+  if( $product->is_type('variable')){
+      $percentages = array();
+
+      // Get all variation prices
+      $prices = $product->get_variation_prices();
+
+      // Loop through variation prices
+      foreach( $prices['price'] as $key => $price ){
+          // Only on sale variations
+          if( $prices['regular_price'][$key] !== $price ){
+              // Calculate and set in the array the percentage for each variation on sale
+              $percentages[] = round( 100 - ( floatval($prices['sale_price'][$key]) / floatval($prices['regular_price'][$key]) * 100 ) );
+          }
+      }
+      // We keep the highest value
+      $percentage = max($percentages) . '%';
+
+  } elseif( $product->is_type('grouped') ){
+      $percentages = array();
+
+      // Get all variation prices
+      $children_ids = $product->get_children();
+
+      // Loop through variation prices
+      foreach( $children_ids as $child_id ){
+          $child_product = wc_get_product($child_id);
+
+          $regular_price = (float) $child_product->get_regular_price();
+          $sale_price    = (float) $child_product->get_sale_price();
+
+          if ( $sale_price != 0 || ! empty($sale_price) ) {
+              // Calculate and set in the array the percentage for each child on sale
+              $percentages[] = round(100 - ($sale_price / $regular_price * 100));
+          }
+      }
+      // We keep the highest value
+      $percentage = max($percentages) . '%';
+
+  } else {
+      $regular_price = (float) $product->get_regular_price();
+      $sale_price    = (float) $product->get_sale_price();
+
+      if ( $sale_price != 0 || ! empty($sale_price) ) {
+          $percentage    = round(100 - ($sale_price / $regular_price * 100)).'% تخفیف';
+      } else {
+          return $html;
+      }
+  }
+  return '<span class="onsale">'. $percentage .'</span>';
+}
+
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10, 3);
+add_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash',20,3);
+
+add_filter('woocommerce_catalog_orderby', 'wc_customize_product_sorting');
+
+function wc_customize_product_sorting($sorting_options){
+    $sorting_options = array(
+        'menu_order' => __( 'فیلنرها', 'woocommerce' ),
+        'popularity' => __( 'پرفروش ترین', 'woocommerce' ),
+        'rating'     => __( 'بیشترین امتیاز', 'woocommerce' ),
+        'date'       => __( 'جدیدترین', 'woocommerce' ),
+        'price'      => __( 'کم‌ترین قیمت', 'woocommerce' ),
+        'price-desc' => __( 'بیشترین قیمت', 'woocommerce' ),
+    );
+
+    return $sorting_options;
+}
