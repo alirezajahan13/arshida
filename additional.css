@@ -606,7 +606,7 @@ select option {
   justify-content: space-between;
 }
 .mainFooterBack .mainFooter h2 {
-  margin: 0px 0px 20px 0px;
+  margin: 20px 0px;
   color: #a1a1a1;
 }
 @media screen and (max-width: 480px) {
@@ -617,6 +617,10 @@ select option {
 }
 .mainFooterBack .mainFooter .footerColumn1 {
   width: 36%;
+}
+.mainFooterBack .mainFooter .footerColumn1 svg {
+  width: 100px;
+  height: 70px;
 }
 @media screen and (max-width: 480px) {
   .mainFooterBack .mainFooter .footerColumn1 {
@@ -665,6 +669,9 @@ select option {
 }
 .footerCopyRightBack .footerCopyRight p {
   margin: 0;
+}
+.footerCopyRightBack .footerCopyRight p a {
+  color: #a1a1a1;
 }
 @media screen and (max-width: 480px) {
   .footerCopyRightBack .footerCopyRight p {
@@ -1266,6 +1273,46 @@ select option {
 .mainHeaderBack .mainHeader .menuSection ul li a {
   padding: 5px 10px;
 }
+.mainHeaderBack .mainHeader .menuSection ul .current-menu-item a {
+  color: #a1a1a1;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children a svg {
+  margin-right: 5px;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children ul {
+  position: absolute;
+  background-color: #fcf9f8;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  right: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  align-items: start;
+  border-radius: 10px;
+  z-index: 9;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children ul li {
+  margin: 2px 0;
+  padding-right: 3px;
+  border-bottom: 1px solid #81a8af;
+  width: 100%;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children ul li:last-child {
+  border-bottom: none;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children ul li:hover a {
+  color: #a1a1a1;
+}
+.mainHeaderBack .mainHeader .menuSection ul .menu-item-has-children ul li a {
+  padding: 7px;
+  transition: all 0.4s;
+}
 .mainHeaderBack .mainHeader a {
   display: flex;
   align-items: center;
@@ -1300,7 +1347,8 @@ select option {
 }
 
 .home .mainHeaderBack {
-  background-color: transparent;
+  background-color: #f5f1ef;
+  padding: 0;
 }
 
 .stickyHeaderParent {
@@ -1339,21 +1387,23 @@ select option {
 }
 
 .showMobileMenu {
-  left: 0;
+  left: 0 !important;
 }
 
 .mobMenuContainer {
   position: fixed;
   width: 340px;
-  z-index: 9999;
+  z-index: 99999;
   left: -400px;
   margin: auto;
   top: 0;
   bottom: 0;
   height: auto;
   overflow-y: scroll;
-  transition: all 0.3s;
+  transition: all 0.5s;
   background-color: #fcf9f8;
+  display: flex;
+  flex-direction: column;
   border-radius: 0px 10px 10px 0px;
 }
 .mobMenuContainer .sectionUp {
@@ -1390,10 +1440,31 @@ select option {
 .mobMenuContainer .mobileMenu ul li::before {
   content: none;
 }
+.mobMenuContainer .mobileMenu ul .current-menu-item a {
+  color: #ffa96b;
+}
+.mobMenuContainer .mobileMenu ul .menu-item-has-children a {
+  display: flex;
+  align-items: center;
+}
+.mobMenuContainer .mobileMenu ul .menu-item-has-children a svg {
+  margin-right: auto;
+}
+.mobMenuContainer .mobileMenu ul .menu-item-has-children .sub-menu {
+  display: none;
+  padding-right: 20px;
+}
+.mobMenuContainer .mobileMenu ul .menu-item-has-children .sub-menu li {
+  border-bottom: none;
+  margin: 20px 0px 10px 0px;
+  padding-bottom: 0;
+  font-size: 13.5px;
+}
 .mobMenuContainer .footerMobMenu {
   background-color: #ffa96b;
   border-radius: 0px 0px 10px 0px;
   padding: 15px 0px;
+  margin-top: auto;
 }
 .mobMenuContainer .footerMobMenu .footerMobMenuIcons {
   display: flex;
@@ -1407,4 +1478,22 @@ select option {
   height: -moz-max-content;
   height: max-content;
   margin: 0px 5px;
+}
+
+.mainSiteOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.showSiteOverlay {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=additional.css.map */
