@@ -9,7 +9,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         h2{
-            margin: 0px 0px 20px 0px;
+            margin: 20px 0px;
             color: $textColorLight;
         }
         .footerColumns{
@@ -20,6 +20,10 @@
         }
         .footerColumn1{
             width: 36%;
+            svg{
+                width: 100px;
+                height: 70px;
+            }
             @include xs{
                 order: 3;
             }
@@ -61,6 +65,9 @@
         }
         p{
             margin: 0;
+            a{
+                color: $textColorLight;
+            }
             @include xs{
                 order: 2;
                 font-size: 10px;
@@ -625,6 +632,56 @@
                         padding: 5px 10px;
                     }
                 }
+                .current-menu-item{
+                    a{
+                        color: $textColorLight;
+                    }
+                }
+                .menu-item-has-children{
+                    a{
+                        svg{
+                            margin-right: 5px;
+                        }
+                    }
+                    &:hover{
+                        ul{
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                    ul{
+                        position: absolute;
+                        background-color: $backColorLighter;
+                        display: flex;
+                        flex-direction: column;
+                        width: 120px;
+                        right: 15px;
+                        visibility: hidden; 
+                        opacity: 0; 
+                        transition: all 0.4s;
+                        align-items: start;
+                        border-radius: 10px;
+                        z-index: 9;
+                        li{
+                            margin: 2px 0;
+                            padding-right: 3px;
+                            border-bottom: 1px solid $mainColor;
+                            width: 100%;
+                            &:last-child{
+                                border-bottom: none;
+                            }
+                            &:hover{
+                                a{
+                                    color: $textColorLight;
+                                }
+                            }
+                            a{
+                                padding: 7px;
+                                transition: all 0.4s;
+                            }
+                        }
+                    }
+                }
             }
         }
         a{
@@ -659,7 +716,8 @@
 }
 .home{
     .mainHeaderBack{
-        background-color: transparent;
+        background-color: #f5f1ef;
+        padding: 0;
     }
 }
 .stickyHeaderParent{
@@ -694,20 +752,22 @@
     top: 0;
 }
 .showMobileMenu{
-    left: 0;
+    left: 0 !important;
 }
 .mobMenuContainer{
     position: fixed;
     width: 340px;
-    z-index: 9999;
+    z-index: 99999;
     left: -400px;
     margin: auto;
     top: 0;
     bottom: 0;
     height: auto;
     overflow-y: scroll;
-    transition: all 0.3s;
+    transition: all 0.5s;
     background-color: #fcf9f8;
+    display: flex;
+    flex-direction: column;
     .sectionUp{
         padding: 15px;
     }
@@ -742,12 +802,37 @@
                     content: none;
                 }
             }
+            .current-menu-item{
+                a{
+                    color: $offColor;
+                }
+            }
+            .menu-item-has-children{
+                a{
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        margin-right: auto;
+                    }
+                }
+                .sub-menu{
+                    display: none;
+                    padding-right: 20px;
+                    li{
+                        border-bottom: none;
+                        margin: 20px 0px 10px 0px;
+                        padding-bottom: 0;
+                        font-size: 13.5px;
+                    }
+                }
+            }
         }
     }
     .footerMobMenu{
         background-color: $offColor;
         border-radius: 0px 0px 10px 0px;
         padding: 15px 0px;
+        margin-top: auto;
         .footerMobMenuIcons{
             display: flex;
             justify-content: center;
@@ -760,4 +845,20 @@
             }
         }
     }
+}
+.mainSiteOverlay{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+.showSiteOverlay{
+    opacity: 1;
+    visibility: visible;
 }
