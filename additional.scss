@@ -593,12 +593,20 @@
 }
 .mainHeaderBack{
     background-color: #fff;
-    padding: 10px 0px;
+    padding: 2px 0px;
     .mainHeader{
         display: flex;
         align-items: center;
         .logoSection{
-            margin-left: 35px;
+            margin-left: 15px;
+            svg{
+                width: 110px;
+                height: 80px;
+                @include sm{
+                    width: 90px;
+                    height: 60px;
+                }
+            }
         }
         .menuSection{
             @include sm{
@@ -627,16 +635,23 @@
             margin-right: auto;
             display: flex;
             align-items: center;
-            a{
-                margin-right: 8px;
+            .showInDesktopMenu{
+                display: flex;
                 @include sm{
                     display: none;
                 }
+                a{
+                    margin-right: 8px;
+                }
             }
-            .openMenuMob{
+            .showInMobileMenu{
                 display: none;
                 @include sm{
                     display: flex !important;
+                    flex-direction: row-reverse;
+                }
+                .phoneIcon{
+                    margin-left: 10px;
                 }
             }
         }
@@ -659,22 +674,89 @@
         background-color: #fff;
         margin: 0;
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
-        padding: 5px 0;
+        padding: 3px 0;
+        @include sm{
+            padding: 7px 0;
+        }
+        .logoSection{
+            svg{
+                width: 100px;
+                height: 70px;
+                @include sm{
+                    width: 80px;
+                    height: 50px;
+                }
+            }
+        }
     }
 }
 .showStickyHeader{
     top: 0;
 }
-.mobileMenuParent{
-    background-color: #fff;
-    // padding: 0px 15px;
-    .moileMenuHeader{
+.showMobileMenu{
+    left: 0;
+}
+.mobMenuContainer{
+    position: fixed;
+    width: 340px;
+    z-index: 9999;
+    left: -400px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    overflow-y: scroll;
+    transition: all 0.3s;
+    background-color: #fcf9f8;
+    .sectionUp{
+        padding: 15px;
+    }
+    border-radius: 0px 10px 10px 0px;
+    #closeMobMenuIcon{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .iconsMobMenu{
-            #openMenuMob{
-                margin-right: 10px;
+        margin-right: auto;
+    }
+    .logoSection{
+        display: block;
+        width: max-content;
+        margin: auto;
+        svg{
+            width: 100px;
+            height: 60px;
+        }
+    }
+    .mobileMenu{
+        ul{
+            margin: 0;
+            padding: 0px 10px;
+            li{
+                margin: 20px 0px;
+                padding-right: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                padding-bottom: 12px;
+                font-weight: 500;
+                &:last-child{
+                    border-bottom: none;
+                }
+                &::before{
+                    content: none;
+                }
+            }
+        }
+    }
+    .footerMobMenu{
+        background-color: $offColor;
+        border-radius: 0px 0px 10px 0px;
+        padding: 15px 0px;
+        .footerMobMenuIcons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a{
+                display: block;
+                width: max-content;
+                height: max-content;
+                margin: 0px 5px;
             }
         }
     }
