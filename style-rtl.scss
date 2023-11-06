@@ -377,8 +377,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         color: #fff;
     }
 }
-.post-type-archive-product{
-    ul.products{
+.post-type-archive-product , .homeSwiper{
+    ul.products , .swiper-wrapper{
         li.product{
             min-height: 460px;
             .onsale{
@@ -396,9 +396,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
             background-color: #fff;
             padding: 20px !important;
             border-radius: 7px !important;
-            display: flex;
+            display: flex !important;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-between !important;
             align-items: center;
             >a.woocommerce-LoopProduct-link{
                 display: flex;
@@ -499,7 +499,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     .mainView{
         width: 100%;
     }
-    img{
+    .innerSlideImg{
         position: absolute;
         left: 0;
         top: 0;
@@ -528,15 +528,113 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
   .swiper-slide .title {
     font-size: 41px;
-    font-weight: 300;
+    font-weight: 700;
+    color: $mainColorDark;
+    span{
+        color: $offColor;
+    }
+
   }
 
   .swiper-slide .subtitle {
-    font-size: 21px;
-  }
+    width: 50%;
+    color: $mainColorDark;
+    line-height: 30px;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
+  }
+.swiper-pagination-bullet-active{
+    background-color: $offColor !important;
+}
   .swiper-slide .text {
-    font-size: 14px;
     max-width: 400px;
     line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    a{
+        margin-left: 30px;
+    }
   }
+.productCatContainer{
+    .productCat{
+        .innerProductCat{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .homeProductCatCard{
+                width: 28%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                h3{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $mainColorDark;
+                }
+            }
+        }
+    }
+}
+.homeCtaBannerContainer{
+    .homeCtaBanner{
+        a{
+            display: block;
+        }
+    }
+}
+.homePopularProductContainer{
+    .homePopularProduct{
+        .popularProductCatPart{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 450px;
+            margin: auto;
+            border-bottom: 2px solid $textColorLight;
+            padding-bottom: 10px;
+            .generalCatsItem{
+                position: relative;
+                font-size: 13px;
+                font-weight: 500;
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    bottom: -12px;
+                    height: 2px;
+                    background-color: $offColor;
+                    left: 0;
+                    right: 0;
+                    opacity: 0;
+                }
+            }
+            .activeCat{
+                font-weight: 700;
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.homeSwiper{
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            max-height: 480px !important;
+            min-height: 370px !important;
+        }
+    }
+}
+.sectionProductContainer{
+    overflow: hidden;
+    padding: 50px 0;
+}

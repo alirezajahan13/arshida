@@ -438,7 +438,7 @@ select option {
 
 .generalButton {
   background-color: #324b4f;
-  border-radius: 45px;
+  border-radius: 5px;
   position: relative;
   color: #fff !important;
   padding: 10px 25px 10px 45px;
@@ -447,7 +447,7 @@ select option {
   width: -moz-max-content;
   width: max-content;
   transition: all 0.3s;
-  border: none;
+  border: 1px solid #324b4f;
   cursor: pointer;
 }
 .generalButton::before {
@@ -489,6 +489,11 @@ select option {
 
 .outlineButton {
   background-color: transparent;
+  color: #324b4f !important;
+  border: 1px solid #324b4f;
+}
+.outlineButton::before {
+  background-color: #324b4f;
 }
 .outlineButton:hover {
   background-color: #a2c0c4;

@@ -18,7 +18,16 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
+  var homeswiper = new Swiper(".homeSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 70,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
+  
 $(document).ready(function(){
     let currentUrl = window.location.href;
     $('.categoryItem').each(function() {
