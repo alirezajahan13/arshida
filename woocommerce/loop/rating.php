@@ -36,7 +36,7 @@ if ( $rating_count > 0 ) : ?>
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
 			<!-- <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php //printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a> -->
-			<a href="#reviews" class="woocommerce-review-link" rel="nofollow"><?php echo '<span>'.round($average, 1).'</span> <svg height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#ffc88e" d="m256 2.2 60.44 193.872H512L353.776 315.88l60.44 193.92L256 389.944 97.776 509.8l60.448-193.92L0 196.072h195.56z"/></svg> '?></a>
+			<span class="woocommerce-review-link" rel="nofollow"><?php echo '<span>'.round($average, 1).'</span> <svg height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#ffc88e" d="m256 2.2 60.44 193.872H512L353.776 315.88l60.44 193.92L256 389.944 97.776 509.8l60.448-193.92L0 196.072h195.56z"/></svg> '?></span>
 			<?php // phpcs:enable ?>
 		<?php endif ?>
 	</div>
